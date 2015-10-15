@@ -1,0 +1,34 @@
+{
+    "name": "indibeast/metrics-calculator",
+    "description": "Metrics",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Indika Gunasekara",
+            "email": "indigun89@gmail.com"
+        }
+    ],
+    "keywords": [
+        "loc"
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Metrics\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Metrics\\Test\\": "tests/src/"
+        }
+    },
+    "branch-alias": {
+        "dev-master": "0.0.x-dev"
+    }
+}
