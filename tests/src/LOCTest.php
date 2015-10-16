@@ -2,13 +2,15 @@
 namespace Metrics\Test;
 
 use Metrics\LOC;
+use Metrics\Reader;
 
 class LOCTest extends \PHPUnit_Framework_TestCase {
 
     public function testloc()
     {
-        $loc = new LOC('test');
+        $loc =  new LOC('sample');
 
-       $this->assertEquals(1,$loc->calculateLOC());
+
+       $this->assertEquals(18,$loc->calculateLOC());
     }
 } 
