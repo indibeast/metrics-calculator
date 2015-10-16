@@ -1,6 +1,6 @@
 //C hello world example
 #include <stdio.h>
-/* add.c
+     /* add.c
      * a simple C program
      */
 int main()

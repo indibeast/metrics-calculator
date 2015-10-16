@@ -75,7 +75,9 @@ class Analyse {
 
     protected static function countMultiLineComments()
     {
-        if(preg_match("/\/\*/",self::$line)) {
+        if(preg_match("/^\s*\/\*/",self::$line)) {
+            self::$multiLineComments++;
+        }elseif(preg_match("/^\s*\*/",self::$line)) {
             self::$multiLineComments++;
         }
     }
