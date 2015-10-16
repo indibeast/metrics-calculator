@@ -11,6 +11,6 @@ class LOCTest extends \PHPUnit_Framework_TestCase {
         $loc =  new LOC('sample');
 
 
-       $this->assertEquals(18,$loc->calculateLOC());
+       $this->assertEquals(18,$loc->calculate());
     }
 } 
