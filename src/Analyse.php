@@ -17,6 +17,8 @@ class Analyse {
 
     public static $singleComments = 0;
 
+    public static $multiLineComments = 0;
+
     public static $line;
 
     public static function getTotalLines()
@@ -34,7 +36,8 @@ class Analyse {
         return  [
                     'no_of_lines' => self::$totalLines,
                     'no_of_blank_lines' => self::$blankLines,
-                    'no_of_single_comments' => self::$singleComments
+                    'no_of_single_comments' => self::$singleComments,
+                    'no_of_multi_comments' => self::$multiLineComments
                 ];
     }
 
@@ -44,6 +47,7 @@ class Analyse {
         self::countNoOfLines();
         self::countBlankLines();
         self::countSingleLineComments();
+        self::countMultiLineComments();
 
     }
 
@@ -71,7 +75,9 @@ class Analyse {
 
     protected static function countMultiLineComments()
     {
-        
+        if(preg_match("/\/\*/",self::$line)) {
+            self::$multiLineComments++;
+        }
     }
 
 }
