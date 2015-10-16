@@ -23,22 +23,18 @@ class LOC {
         $this->preProcess();
 
         if($this->filepointer) {
-
-            while(!feof($this->filepointer)) {
+            while(false !== ($line = @fgets($this->filepointer))) {
                 /**
                  * Get the first character
                  */
-                $in = fgetc($this->filepointer);
-                /**
-                 * Check for the new line
-                 */
-                if($in === "\n") {
-                    Stats::$totalLines++;
-                }
+               // $in = fgetc($this->filepointer);
+
+               // Stats::character($in,$this->filepointer);
+                Analyse::line($line);
             }
         }
         fclose($this->filepointer);
-        return Stats::getTotalLines();
+        return Analyse::getAll();
     }
 
     protected function readFile()
